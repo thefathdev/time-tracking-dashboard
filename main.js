@@ -14,6 +14,9 @@ timeframeBtns.forEach((btn, i) => {
     console.log(timeframes[i])
     removeCards()
     createCards(data)
+
+    timeframeBtns.forEach((btn) => (btn.dataset.state = 'inactive'))
+    btn.dataset.state = 'active'
   })
 })
 
@@ -21,7 +24,9 @@ function createCards(data) {
   data.forEach((datum) => {
     // Create card
     const card = document.createElement('div')
-    card.className = 'card'
+    card.className = `card card--${datum.title
+      .replace(/\s+/g, '-')
+      .toLowerCase()}`
 
     // Add icon to card
     const icon = document.createElement('img')

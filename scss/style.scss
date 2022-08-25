@@ -1,0 +1,109 @@
+// TODO: style the card
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import './normalize';
+@import './reset';
+
+:root {
+  // Colors
+  --clr-primary: hsl(246, 80%, 60%);
+
+  --clr-accent-light-orange: hsl(15, 100%, 70%);
+  --clr-accent-soft-blue: hsl(195, 74%, 62%);
+  --clr-accent-light-red: hsl(348, 100%, 68%);
+  --clr-accent-lime-green: hsl(145, 58%, 55%);
+  --clr-accent-violet: hsl(264, 64%, 52%);
+  --clr-accent-soft-orange: hsl(43, 84%, 65%);
+
+  --clr-neutral-800: hsl(226, 43%, 10%);
+  --clr-neutral-600: hsl(235, 46%, 20%);
+  --clr-neutral-400: hsl(235, 45%, 61%);
+  --clr-neutral-200: hsl(236, 100%, 87%);
+  --clr-neutral-0: hsl(0, 0%, 100%);
+
+  // font sizes
+  --fs-400: 1.125rem;
+
+  // font weights
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  // font families
+  --ff-sans: 'Rubik', sans-serif;
+
+  // border radius
+  --border-radius: 1.125rem;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-0);
+  line-height: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 1.25em;
+  background-color: var(--clr-neutral-800);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  background-color: var(--clr-neutral-600);
+
+  &__info {
+    padding: 1.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    border-radius: var(--border-radius);
+    background-color: var(--clr-primary);
+  }
+
+  &__img {
+    border: 3px solid var(--clr-neutral-0);
+    border-radius: 50%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 1.35em;
+  }
+
+  &__report {
+    margin-bottom: 0.65em;
+    font-size: 0.8em;
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-200);
+  }
+
+  &__nav > ul {
+    padding: 1.5em 1.75em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__timeframe {
+    color: var(--clr-neutral-200);
+
+    &:hover {
+      color: var(--clr-neutral-0);
+    }
+
+    &[data-state='active'] {
+      color: var(--clr-neutral-0);
+    }
+  }
+}

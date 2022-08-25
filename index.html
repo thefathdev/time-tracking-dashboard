@@ -13,6 +13,8 @@
 
     <title>Time tracking dashboard | Frontend Mentor</title>
 
+    <link rel="stylesheet" href="./scss/style.scss" />
+
     <style>
       .attribution {
         font-size: 11px;
@@ -31,19 +33,23 @@
             src="/images/image-jeremy.png"
             alt="Jeremy Robson"
             class="profile-card__img"
+            width="64"
+            height="64"
           />
-          <p class="profile-card__report">Report for</p>
-          <h1 class="profile-card__name">Jeremy Robson</h1>
+          <div class="profile-text">
+            <p class="profile-card__report">Report for</p>
+            <h1 class="profile-card__name">Jeremy Robson</h1>
+          </div>
         </div>
         <nav class="profile-card__nav">
           <ul>
-            <li class="profile-card__timeframe">
+            <li class="profile-card__timeframe" data-state="inactive">
               <a href="#" role="button">Daily</a>
             </li>
-            <li class="profile-card__timeframe">
+            <li class="profile-card__timeframe" data-state="active">
               <a href="#" role="button">Weekly</a>
             </li>
-            <li class="profile-card__timeframe">
+            <li class="profile-card__timeframe" data-state="inactive">
               <a href="#" role="button">Monthly</a>
             </li>
           </ul>
