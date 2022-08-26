@@ -31,10 +31,9 @@ function createCards(data) {
     // Add icon to card
     const icon = document.createElement('img')
 
-    const imgUrl = new URL(
-      `/images/icon-${datum.title.replace(/\s+/g, '-').toLowerCase()}.svg`,
-      import.meta.url
-    ).href
+    const imgUrl = `/images/icon-${datum.title
+      .replace(/\s+/g, '-')
+      .toLowerCase()}.svg`
 
     icon.src = imgUrl
     icon.alt = 'icon'
