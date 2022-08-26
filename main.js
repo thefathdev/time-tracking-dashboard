@@ -1,6 +1,6 @@
 import data from './data.json'
 
-const container = document.querySelector('.container')
+const content = document.querySelector('.content')
 const timeframeBtns = document.querySelectorAll('.profile-card__timeframe')
 const timeframes = ['daily', 'weekly', 'monthly']
 
@@ -50,20 +50,18 @@ function createCards(data) {
     const cardMain = document.createElement('div')
     cardMain.className = 'card__main'
 
+    const cardSecondary = document.createElement('div')
+    cardSecondary.className = 'card__secondary'
+
     const cardTitle = document.createElement('h2')
     cardTitle.className = 'card__title'
     cardTitle.innerText = `${datum.title}`
-    cardMain.appendChild(cardTitle)
+    cardSecondary.appendChild(cardTitle)
 
     const cardCurrentTime = document.createElement('p')
     cardCurrentTime.className = 'card__current-time'
     cardCurrentTime.innerText = `${datum.timeframes[timeframe].current}hrs`
     cardMain.appendChild(cardCurrentTime)
-
-    cardInfo.appendChild(cardMain)
-
-    const cardSecondary = document.createElement('div')
-    cardSecondary.className = 'card__secondary'
 
     const kebabIcon = document.createElement('a')
     const kebabIconSvg =
@@ -75,13 +73,15 @@ function createCards(data) {
     const cardPreviousTime = document.createElement('p')
     cardPreviousTime.className = 'card__previous-time'
     cardPreviousTime.innerText = `Last Week - ${datum.timeframes[timeframe].previous}hrs`
-    cardSecondary.appendChild(cardPreviousTime)
+    cardMain.appendChild(cardPreviousTime)
 
     cardInfo.appendChild(cardSecondary)
 
+    cardInfo.appendChild(cardMain)
+
     card.appendChild(cardInfo)
 
-    container.appendChild(card)
+    content.appendChild(card)
   })
 }
 

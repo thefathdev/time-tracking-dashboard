@@ -19,60 +19,55 @@
       .attribution {
         font-size: 11px;
         text-align: center;
+        background-color: black;
       }
       .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: hsl(228, 90%, 88%);
       }
     </style>
   </head>
   <body>
+    <!-- TODO: rewrap -->
     <main class="container">
-      <div class="profile-card">
-        <div class="profile-card__info">
-          <img
-            src="/images/image-jeremy.png"
-            alt="Jeremy Robson"
-            class="profile-card__img"
-            width="64"
-            height="64"
-          />
-          <div class="profile-text">
-            <p class="profile-card__report">Report for</p>
-            <h1 class="profile-card__name">Jeremy Robson</h1>
+      <div class="content">
+        <div class="profile-card">
+          <div class="profile-card__info">
+            <img
+              src="/images/image-jeremy.png"
+              alt="Jeremy Robson"
+              class="profile-card__img"
+              width="64"
+              height="64"
+            />
+            <div class="profile-text">
+              <p class="profile-card__report">Report for</p>
+              <h1 class="profile-card__name">Jeremy Robson</h1>
+            </div>
           </div>
+          <nav class="profile-card__nav">
+            <ul>
+              <li class="profile-card__timeframe" data-state="inactive">
+                <a href="#" role="button">Daily</a>
+              </li>
+              <li class="profile-card__timeframe" data-state="active">
+                <a href="#" role="button">Weekly</a>
+              </li>
+              <li class="profile-card__timeframe" data-state="inactive">
+                <a href="#" role="button">Monthly</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav class="profile-card__nav">
-          <ul>
-            <li class="profile-card__timeframe" data-state="inactive">
-              <a href="#" role="button">Daily</a>
-            </li>
-            <li class="profile-card__timeframe" data-state="active">
-              <a href="#" role="button">Weekly</a>
-            </li>
-            <li class="profile-card__timeframe" data-state="inactive">
-              <a href="#" role="button">Monthly</a>
-            </li>
-          </ul>
-        </nav>
       </div>
-
-      <!-- Card -->
-      <!-- <div class="card">
-        <div class="card__info">
-          <h2 class="card__title"></h2>
-          <p class="card__current-time"></p>
-           Kebab icon
-          <p class="card__previous-time"></p>
-        </div>
-      </div> -->
     </main>
-
-    <!-- <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/whatTheFath">whatTheFath</a
+      >.
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>
