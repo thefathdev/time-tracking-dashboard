@@ -1,4 +1,4 @@
-// TODO: style the card
+// TODO: style the cards for desktop layout
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 @import './normalize';
 @import './reset';
@@ -16,6 +16,7 @@
 
   --clr-neutral-800: hsl(226, 43%, 10%);
   --clr-neutral-600: hsl(235, 46%, 20%);
+  --clr-neutral-500: hsl(235, 41%, 34%);
   --clr-neutral-400: hsl(235, 45%, 61%);
   --clr-neutral-200: hsl(236, 100%, 87%);
   --clr-neutral-0: hsl(0, 0%, 100%);
@@ -47,9 +48,11 @@ body {
   display: flex;
   flex-direction: column;
   padding: 4em 1.25em;
+  gap: 1.5em;
   background-color: var(--clr-neutral-800);
 }
 
+// profile card
 .profile-card {
   display: flex;
   flex-direction: column;
@@ -89,7 +92,7 @@ body {
   }
 
   &__nav > ul {
-    padding: 1.5em 1.75em;
+    padding: 1.5em 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -105,5 +108,95 @@ body {
     &[data-state='active'] {
       color: var(--clr-neutral-0);
     }
+  }
+}
+
+// card
+.card {
+  position: relative;
+  padding-top: 2.25em;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  &__icon {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-15%) translateX(-15%);
+  }
+
+  &__info {
+    z-index: 2;
+    position: relative;
+    padding: 1.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    background-color: var(--clr-neutral-600);
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--clr-neutral-500);
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+  }
+
+  &__title {
+    font-weight: var(--fw-medium);
+  }
+
+  &__current-time {
+    font-size: 1.75em;
+    font-weight: var(--fw-light);
+  }
+
+  &__secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: stretch;
+    gap: 1.25em;
+  }
+
+  &__previous-time {
+    font-size: 0.825em;
+    color: var(--clr-neutral-200);
+  }
+
+  &__kebab-icon {
+    cursor: pointer;
+
+    &:hover svg > path {
+      fill: var(--clr-neutral-0);
+    }
+  }
+
+  &--work {
+    background-color: var(--clr-accent-light-orange);
+  }
+  &--play {
+    background-color: var(--clr-accent-soft-blue);
+  }
+  &--study {
+    background-color: var(--clr-accent-light-red);
+  }
+  &--exercise {
+    background-color: var(--clr-accent-lime-green);
+  }
+  &--social {
+    background-color: var(--clr-accent-violet);
+  }
+  &--self-care {
+    background-color: var(--clr-accent-soft-orange);
   }
 }

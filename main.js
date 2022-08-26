@@ -47,27 +47,37 @@ function createCards(data) {
     const cardInfo = document.createElement('div')
     cardInfo.className = 'card__info'
 
+    const cardMain = document.createElement('div')
+    cardMain.className = 'card__main'
+
     const cardTitle = document.createElement('h2')
     cardTitle.className = 'card__title'
     cardTitle.innerText = `${datum.title}`
-    cardInfo.appendChild(cardTitle)
+    cardMain.appendChild(cardTitle)
 
     const cardCurrentTime = document.createElement('p')
     cardCurrentTime.className = 'card__current-time'
     cardCurrentTime.innerText = `${datum.timeframes[timeframe].current}hrs`
-    cardInfo.appendChild(cardCurrentTime)
+    cardMain.appendChild(cardCurrentTime)
+
+    cardInfo.appendChild(cardMain)
+
+    const cardSecondary = document.createElement('div')
+    cardSecondary.className = 'card__secondary'
 
     const kebabIcon = document.createElement('a')
     const kebabIconSvg =
       '<svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>'
     kebabIcon.innerHTML = kebabIconSvg
     kebabIcon.className = 'card__kebab-icon'
-    cardInfo.appendChild(kebabIcon)
+    cardSecondary.appendChild(kebabIcon)
 
     const cardPreviousTime = document.createElement('p')
-    cardPreviousTime.className = 'card__current-time'
+    cardPreviousTime.className = 'card__previous-time'
     cardPreviousTime.innerText = `Last Week - ${datum.timeframes[timeframe].previous}hrs`
-    cardInfo.appendChild(cardPreviousTime)
+    cardSecondary.appendChild(cardPreviousTime)
+
+    cardInfo.appendChild(cardSecondary)
 
     card.appendChild(cardInfo)
 
